@@ -1,27 +1,8 @@
 # 📚 Presentaciones – cc2008: Programación Orientada a Objetos
 
-Este repositorio contiene todas las presentaciones del curso **cc2008 – Programación Orientada a Objetos**, impartido durante el **Semestre 01, 2025**.
+Este repositorio contiene todas las presentaciones del curso **cc2008 – Programación Orientada a Objetos**, impartido durante el **Semestre 02, 2025**.
 
 Las presentaciones están organizadas por número y tema, y se encuentran en formato Reveal.js, PDF y Markdown para facilitar el acceso desde cualquier plataforma.
-
----
-
-## 📁 Estructura del repositorio
-
-```
-presentations/
-├── 01-intro-poo.html
-├── 01-intro-poo.md
-├── 01-intro-poo.pdf
-├── 02-clases-objetos.html
-├── 02-clases-objetos.md
-├── 02-clases-objetos.pdf
-└── ...
-assets/
-├── 01-intro-poo.png
-├── 02-clases-objetos.png
-└── ...
-```
 
 ---
 
