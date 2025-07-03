@@ -125,3 +125,100 @@ Semestre 02, 2025
 
 - Aplicación de mensajería:
   - `Usuario`, `Mensaje`, `Chat`
+
+
+
+## ¿Qué es un compilador?
+
+
+Un **compilador** es un programa que traduce el código fuente escrito en un lenguaje de programación de alto nivel a código máquina (binario) o a un formato intermedio que puede ser ejecutado.
+
+
+### Etapas de compilación
+
+
+1. **Análisis léxico (tokenización)**  
+   - El código fuente se divide en unidades mínimas llamadas *tokens* (palabras clave, identificadores, operadores).
+
+
+2. **Análisis sintáctico (parsing)**  
+   - Verifica la estructura gramatical del código y construye un árbol sintáctico.
+
+
+3. **Análisis semántico**  
+   - Comprueba tipos de datos, declaraciones y el significado de las instrucciones.
+
+
+4. **Generación de código intermedio**  
+   - Traduce el código fuente a un lenguaje intermedio independiente del hardware.
+
+
+5. **Optimización**  
+   - Mejora el código intermedio para mayor eficiencia.
+
+
+6. **Generación de código máquina**  
+   - Convierte el código optimizado en binario ejecutable para el procesador.
+
+
+
+## Compiladores vs. Intérpretes
+
+
+| Característica               | Compilador                        | Intérprete                     |
+|------------------------------|-------------------------------------|---------------------------------|
+| Traducción                   | Traduce todo el código a ejecutable | Traduce y ejecuta línea a línea|
+| Tiempo de ejecución          | Más rápido                         | Más lento                      |
+
+
+| Característica               | Compilador                        | Intérprete                     |
+|------------------------------|-------------------------------------|---------------------------------|
+| Depuración                   | Menos flexible                     | Más fácil (error en tiempo real)|
+| Ejemplo de lenguajes         | C, C++, Rust, Go                   | Python, Ruby, JavaScript       |
+| Salida                       | Archivo binario (*.exe, *.out)     | Ningún archivo binario         |
+
+
+| Característica               | Compilador                        | Intérprete                     |
+|------------------------------|-------------------------------------|---------------------------------|
+| Ejemplo de lenguajes         | C, C++, Rust, Go                   | Python, Ruby, JavaScript       |
+| Salida                       | Archivo binario (*.exe, *.out)     | Ningún archivo binario         |
+
+
+
+## Java
+
+
+Java utiliza un enfoque **híbrido**:
+
+
+1. El compilador `javac` traduce el código fuente (*.java*) a **bytecode** (*.class*).
+
+
+2. Este bytecode no es código máquina; es ejecutado por la **Máquina Virtual de Java (JVM)**.
+
+
+3. La JVM interpreta o compila el bytecode en tiempo de ejecución usando técnicas como **Just-In-Time (JIT) compilation**.
+
+
+### Ventajas
+- **Portabilidad:** El bytecode puede ejecutarse en cualquier plataforma con JVM.
+
+
+- **Seguridad:** La JVM proporciona un sandbox para el código.
+
+
+- **Optimización en tiempo real:** Gracias al compilador JIT.
+
+
+## Flujo en Java
+
+```plaintext
+Código fuente (.java)
+         ↓
+Compilador Java (javac)
+         ↓
+Bytecode (.class)
+         ↓
+Máquina Virtual de Java (JVM)
+         ↓
+Código máquina (ejecución en tiempo real)
