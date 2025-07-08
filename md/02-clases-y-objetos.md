@@ -3,151 +3,29 @@ Semestre 02, 2025
 
 
 
-## Clases
+## POO
+
+El mundo se percibe como una colección de objetos que interactúan para resolver problemas.
 
 
-Una **clase** es una plantilla o molde para crear objetos.
+### Bombilla
 
-Define:
-- Atributos (Estado)
-- Métodos (Comportamiento)
+Atributos: consumo, estado (encendido/apagado).
 
-
-**Analogías:**
-- Plano de una casa.
-- Molde de galletas.
+Métodos: encender(), apagar().
 
 
+### Televisor
 
-## Objetos
+Atributos: tamaño, resolución, color.
 
-
-Un **objeto** es una entidad que tiene:
-- **Atributos** (estado, propiedades)
-- **Comportamientos** (acciones, métodos)
+Métodos: encender(), apagar(), cambiarCanal(), ajustarVolumen().
 
 
-### Instancia
-Creado en base a una clase.
+Los atributos se van a representar como variables a las que se les define un tipo de datos y un valor.
 
 
-Representa algo **concreto** del mundo real o algo **abstracto** en el sistema.
-
-
-Ejemplos:
-- Un bombillo tiene estado (encendido/apagado) y acciones (encender/apagar)
-- Una cuenta bancaria tiene saldo y puede depositar o retirar dinero
-
-
-### Usos
-- Para **organizar** el código de forma modular
-- Para **reutilizar** el código
-- Para **modelar** el mundo real en un sistema
-
-
-Ejemplo:
-Clase `CuentaBancaria`
-- Objetos: cuenta de Juan, cuenta de María, cuenta de Pedro
-
-
-### Clase vs Objeto
-**Clase:** estructura común
-```
-CuentaBancaria
-- saldo: double
-- depositar(monto: double)
-- retirar(monto: double)
-```
-
-**Objeto:** instancia concreta
-```
-cuentaJuan → saldo = Q500.00
-cuentaMaria → saldo = Q1500.00
-```
-
-
-
-## Anatomía de una Clase
-
-
-### Estructura básica de una clase
-```java []
-public class Bombillo {
-    // Atributos
-    private boolean encendido;
-
-    // Constructor
-    public Bombillo() {
-        encendido = false;
-    }
-
-    // Métodos
-    public void encender() {
-        encendido = true;
-    }
-}
-```
-
-
-### Constructores
-- Método especial que se ejecuta al crear el objeto
-- Nombre igual a la clase
-- Se puede sobrecargar
-
-```java []
-public Cuenta(String nombre) {
-    this.nombre = nombre;
-}
-```
-
-
-### Métodos
-- Definen comportamiento del objeto
-- Partes:
-  - Modificador de visibilidad
-  - Tipo de retorno
-  - Nombre
-  - Parámetros
-
-```java []
-public void depositar(double monto) {
-    saldo += monto;
-}
-```
-
-
-### Visibilidad
-  - `private`: solo accesible dentro de la clase
-  - `public`: accesible desde cualquier parte
-  - `protected`: Más adelante cuando veamos herencia.
-
-```java []
-private String nombre;
-public int contador = 0;
-```
-
-
-### Encapsulamiento
-- Encapsular = proteger el estado interno
-- Seguridad
-- Flexibilidad
-
-
-Se usan `getters` y `setters`
-
-```java []
-public double getSaldo() {
-    return saldo;
-}
-
-public void setSaldo(double nuevoSaldo) {
-    saldo = nuevoSaldo;
-}
-```
-
-
-
-## Anatomía de un Método
+El comportamiento se va a representar como métidos a los que les definimos su tipo de retorno y parámetros.
 
 
 ### Partes de un método
@@ -163,11 +41,158 @@ public double calcularArea(double base, double altura) {
 - Cuerpo: instrucciones
 
 
-### Ejemplo
+
+## Clases
+
+
+Una clase es una plantilla o modelo que define las características y comportamientos comunes de un conjunto de objetos.
+
+
+En ella se definen:
+- Atributos (Estado)
+- Métodos (Comportamiento)
+
+
+### Perro
+
+```java[]
+class Perro {
+    // atributos
+    private String nombre;
+
+    // metodos
+    public void ladrar() {
+        System.out.println("¡Guau!");
+    }
+}
+```
+
+
+### Constructores
+Un constructor es un método especial en una clase que se llama automáticamente cuando se crea una nueva instancia de esa clase.
+
+
+Su función principal es inicializar los atributos del objeto recién creado.
+
+
+#### Características
+- Mismo nombre que la clase.
+- No tienen tipo de retorno.
+- Se llaman automáticamente.
+- Se pueden sobrecargar.
+
+
 ```java []
-public class Bombillo {
-    public void encender() {
-        System.out.println("Bombillo encendido");
+public Perro(String nombre) {
+    this.nombre = nombre;
+}
+```
+
+
+### Perro (final)
+
+```java[]
+class Perro {
+    // atributos
+    private String nombre;
+
+    // constructor
+    public Perro(String nombre) {
+        this.nombre = nombre;
+    }
+
+    // metodos
+    public void ladrar() {
+        System.out.println("¡Guau!");
+    }
+}
+```
+
+
+
+## Objetos
+
+
+Un objeto es una entidad que se genera en base a una clase. Se dice que es una instancia concreta de una clase.
+
+
+Es la unidad básica en la programación orientada a objetos (POO).
+
+
+### Instanciar
+Instanciar una clase es el proceso de crear un nuevo objeto en base a ella. Se utiliza la palabra reservada **new**
+
+
+### miPerro
+
+```java[]
+Perro miPerro = new Perro("Scooby Doo");
+miPerro.ladrar();
+```
+
+
+
+### Clase vs Objeto
+
+
+**Clase:** estructura común
+```
+CuentaBancaria
+- saldo: double
+```
+
+
+**Objeto:** instancia concreta
+```
+cuentaJuan → saldo = Q500.00
+cuentaMaria → saldo = Q1500.00
+```
+
+
+
+### Encapsulamiento
+
+
+- Encapsular = proteger el estado interno
+- Agrupa datos y operaciones dentro de la clase
+- Oculta la implementación interna y expone una interfaz pública clara.
+
+
+- Seguridad
+- Flexibilidad
+
+
+### Caja Negra
+
+
+
+### Modificadores de Visibilidad
+  - `public`: accesible desde cualquier parte
+  - `private`: solo accesible dentro de la clase
+  - `protected`: Más adelante cuando veamos herencia.
+
+```java []
+private String nombre;
+public int contador = 0;
+```
+
+
+Los atributos suelen declararse como privados, y se accede a ellos mediante métodos públicos getters y setters.
+
+
+### CuentaBancaria
+```java []
+public class CuentaBancaria {
+    private double saldo;
+
+    // getters
+    public double getSaldo() {
+        return saldo;
+    }
+
+    // setters
+    public void setSaldo(double cantidad) {
+        saldo = cantidad;
     }
 }
 ```
@@ -179,34 +204,34 @@ public class Bombillo {
 
 ### Definición
 - UML = Unified Modeling Language
+- **Estándar**
 - Herramienta para representar gráficamente:
   - Clases
   - Objetos
   - Relaciones
 
 
+Fue creado en los años 90 por Grady Booch, Ivar Jacobson y James Rumbaugh como una unificación de varios métodos de modelado.
+
+
+Ayuda a equipos de desarrollo a entender la estructura y el comportamiento de un sistema sin leer código.
+
+
+Facilita la identificación de clases, atributos, métodos y relaciones antes de escribir una sola línea de código.
+
+
+Al diseñar el sistema visualmente, es más fácil identificar problemas de arquitectura.
+
+
 ### Diagrama de clase básico
 ```
-+----------------------+
-| CuentaBancaria       |
-+----------------------+
-| - saldo: double      |
-| - numero: Int        |
-+----------------------+
-| + depositar(monto)   |
-| + retirar(monto)     |
-+----------------------+
++----------------------------+
+| CuentaBancaria             |
++----------------------------+
+| - saldo: double            |
+| - numero: Int              |
++----------------------------+
+| + depositar(monto): void   |
+| + retirar(monto): void     |
++----------------------------+
 ```
-
-
-Clase: `CuentaBancaria`
--------------------------
-Atributos:
-- `- saldo: double`
-- `- nombre: String`
-
-
-Métodos:
-- `+ getSaldo(): double`
-- `+ depositar(monto: double): void`
-- `+ retirar(monto: double): void`

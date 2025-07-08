@@ -222,3 +222,4 @@ Bytecode (.class)
 Máquina Virtual de Java (JVM)
          ↓
 Código máquina (ejecución en tiempo real)
+```
