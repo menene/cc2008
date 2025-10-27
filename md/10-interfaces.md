@@ -262,3 +262,6 @@ Clases: Pokemon (papa), Charmander (hijo), Squirtle (hijo).
 
 
 🤔 Sería bueno hacer una interfaz 🤖
+
+
+<img src="../assets/img/poke-diagram.png" alt="uml" width="100%" />
